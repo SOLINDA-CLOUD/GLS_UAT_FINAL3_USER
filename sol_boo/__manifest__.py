@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mail','stock','maintenance','report_xlsx'],
+    'depends': ['base','mail','stock','maintenance','report_xlsx', 'account'],
 
     # always loaded
     'data': [
@@ -29,6 +29,7 @@
         'data/sequence.xml',
         'data/data.xml',
         'views/reporting_view.xml',
+        'views/psak_report_view.xml',
         'views/pivot_graph.xml',
         'views/stock_location.xml',
         'views/trouble_master.xml',
