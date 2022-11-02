@@ -29,7 +29,7 @@
                 <form string="">
                     <header>
                         <button name="download_report" string="Generate" type="object" class="btn-primary"/>
-                        <button string="Cancel" special="cancel" class="btn-default"/>
+                        <!-- <button string="Cancel" special="cancel" class="btn-default"/> -->
                     </header>
                     <sheet>
                         <group>
