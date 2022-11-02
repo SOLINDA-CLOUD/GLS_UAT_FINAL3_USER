@@ -6,7 +6,7 @@ from odoo.exceptions import UserError, ValidationError
 from dateutil import relativedelta
 from calendar import month_abbr
 
-class SellingPricePsak(models.TransientModel):
+class SellingPricePsak(models.Model):
     _name = 'selling.price.psak'
     _description = 'Selling Price PSAK'
 
@@ -15,7 +15,7 @@ class SellingPricePsak(models.TransientModel):
     price = fields.Float(string='Price')
     psak_report_id = fields.Many2one('psak.report', string='PSAK Report', ondelete='cascade')
 
-class PsakReport(models.TransientModel):
+class PsakReport(models.Model):
     _name = 'psak.report'
     _description = 'PSAK Report'
 
