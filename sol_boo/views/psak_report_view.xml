@@ -72,7 +72,7 @@
             <field name="name">PSAK Report</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">psak.report</field>
-            <field name="view_mode">form</field>
+            <field name="view_mode">tree,form</field>
         </record>
 
         <report id="psak_report_xlsx" model="psak.report" string="PSAK Report" report_type="xlsx" name="sol_boo.psak_report_excel.xlsx" file="PSAK Report.xlsx" menu="False" attachment_use="False"/>
