@@ -201,6 +201,8 @@ class Item(models.Model):
         }
     
     def create_analytic_account_id(self,code,seq):
+        if not code:
+            raise ValidationError("Project code is not defined.")
         analytic_name = code + " 1."+ str(seq)
         analytic_account_existing = self.env['account.analytic.account'].search([('name', '=', analytic_name)],limit=1)
         if analytic_account_existing:
