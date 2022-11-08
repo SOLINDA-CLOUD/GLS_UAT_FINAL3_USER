@@ -18,7 +18,7 @@ class SaleOrder(models.Model):
     director_info = fields.Char(string='Director')
     
     def action_print_quotation_boo(self):
-        return self.env.ref('gls_reporting.report_quotation_boo_actiono').report_action(self)
+        return self.env.ref('gls_reporting.report_quotation_boo_action').report_action(self)
 
     def action_print_quotation_oms(self):
         return self.env.ref('gls_reporting.report_quotation_oms_action').report_action(self)

@@ -27,8 +27,8 @@
             <field name="report_file">gls_reporting.report_quotation_boo</field>
             <field name="paperformat_id" ref="gls_reporting.report_paperformat_a4_portrait_quotation_gls" />
             <field name="print_report_name">'BOO - %s' % object.name</field>
-            <field name="binding_model_id" ref="sale.model_sale_order"/>
-            <field name="binding_type">report</field>
+            <!-- <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_type">report</field> -->
         </record>
         <record id="report_quotation_oms_action" model="ir.actions.report">
             <field name="name">Quotation - OMS</field>
@@ -39,8 +39,8 @@
             <field name="report_file">gls_reporting.report_quotation_oms</field>
             <field name="paperformat_id" ref="gls_reporting.report_paperformat_a4_portrait_quotation_gls" />
             <field name="print_report_name">'OMS - %s' % object.name</field>
-            <field name="binding_model_id" ref="sale.model_sale_order"/>
-            <field name="binding_type">report</field>
+            <!-- <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_type">report</field> -->
         </record>
 
         <record id="report_leads_cna_action" model="ir.actions.report">
@@ -63,8 +63,8 @@
             <field name="report_name">gls_reporting.report_sale_order</field>
             <field name="report_file">gls_reporting.report_sale_order</field>
             <field name="print_report_name">'GLS/GAK/%s' % object.name</field>
-            <field name="binding_model_id" ref="sale.model_sale_order"/>
-            <field name="binding_type">report</field>
+            <!-- <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <field name="binding_type">report</field> -->
         </record>
 
         <record id="report_quotation_trading_crm_action" model="ir.actions.report">
@@ -76,9 +76,9 @@
             <field name="report_file">gls_reporting.report_quotation_trading</field>
             <field name="paperformat_id" ref="gls_reporting.report_paperformat_a4_portrait_quotation_gls" />
             <field name="print_report_name">'TRADING - %s' % object.name</field>
-            <field name="binding_model_id" ref="sale.model_sale_order"/>
+            <!-- <field name="binding_model_id" ref="sale.model_sale_order"/>
             <field name="binding_type">report</field>
-        </record>
+        </record> -->
 
 
 
