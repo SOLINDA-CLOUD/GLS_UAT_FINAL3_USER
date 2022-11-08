@@ -6,12 +6,6 @@
       <field name="model">sale.order</field>
       <field name="inherit_id" ref="sale.view_order_form"/>
       <field name="arch" type="xml">
-        <xpath expr="//header" position="inside">
-          <button name="gls_reporting.report_quotation_boo" states="sale" type="object" string="Print Quotation BOO" class="oe_highlight"/>
-          <button name="gls_reporting.report_quotation_oms" states="sale" type="object" string="Print Quotation OMS" class="oe_highlight"/>
-          <button name="gls_reporting.report_sale_order" states="sale" type="object" string="Print Quotation Order" class="oe_highlight"/>
-          <button name="gls_reporting.report_quotation_trading" states="sale" type="object" string="Print Quotation Trading" class="oe_highlight"/>
-        </xpath>
         <notebook position="inside">
           <page name="payment_schedule" string="Payment Schedule">
             <group>
