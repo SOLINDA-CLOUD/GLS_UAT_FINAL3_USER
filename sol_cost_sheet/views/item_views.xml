@@ -89,11 +89,7 @@
       <field name="res_model">item.item</field>
       <field name="view_mode">tree</field>
       <field name="domain">[]</field>
-      <field name="help" type="html">
-        <p>
-        Test
-        </p>
-      </field>
+
     </record>
 
   </data>
