@@ -18,16 +18,16 @@ class SaleOrder(models.Model):
     director_info = fields.Char(string='Director')
     
     def action_print_quotation_boo(self):
-        return self.env.ref('gls_reporting.report_quotation_boo')
+        return self.env.ref('gls_reporting.report_quotation_boo_actiono').report_action(self)
 
     def action_print_quotation_oms(self):
-        return self.env.ref('gls_reporting.report_quotation_oms').report_action(self)
+        return self.env.ref('gls_reporting.report_quotation_oms_action').report_action(self)
 
     def action_print_quotation_sale(self):
-        return self.env.ref('gls_reporting.report_sale_order').report_action(self)
+        return self.env.ref('gls_reporting.action_report_sale_order').report_action(self)
 
     def action_print_quotation_trading(self):
-        return self.env.ref('gls_reporting.report_quotation_trading').report_action(self)
+        return self.env.ref('gls_reporting.report_quotation_trading_crm_action').report_action(self)
 
     @api.onchange('payment_schedule_line_ids')
     def _onchange_payment_schedule_line_ids(self):
