@@ -80,7 +80,14 @@
             <field name="binding_type">report</field>
         </record> -->
 
-
+        <record id="quotation_sale_order_inherit" model="ir.actions.report">
+            <field name="name">sale.order.view.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.report_saleorder_document"/>
+            <field name="arch" type="xml">
+                <field name="menu">0</field>
+            </field>
+        </record>
 
 
 
