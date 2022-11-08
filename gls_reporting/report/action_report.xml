@@ -77,8 +77,8 @@
             <field name="paperformat_id" ref="gls_reporting.report_paperformat_a4_portrait_quotation_gls" />
             <field name="print_report_name">'TRADING - %s' % object.name</field>
             <!-- <field name="binding_model_id" ref="sale.model_sale_order"/>
-            <field name="binding_type">report</field>
-        </record> -->
+            <field name="binding_type">report</field> -->
+        </record>
 
         <record id="quotation_sale_order_inherit" model="ir.actions.report">
             <field name="name">sale.order.view.form.inherit</field>
