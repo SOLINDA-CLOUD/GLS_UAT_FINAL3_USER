@@ -201,6 +201,8 @@ class Item(models.Model):
         }
     
     def create_analytic_account_id(self,code,seq):
+        if not code:
+            raise ValidationError("Project code is not defined.")
         analytic_name = code + " 1."+ str(seq)
         analytic_account_existing = self.env['account.analytic.account'].search([('name', '=', analytic_name)],limit=1)
         if analytic_account_existing:
@@ -219,7 +221,8 @@ class Item(models.Model):
             if i[0].rap_id.state == 'waiting':
                 raise ValidationError("Cannot create Purchase Request because RAP with number %s is waiting for approval"%(i.rap_id.name))
             purchase = i.env['purchase.request'].create({
-                'project_code':i.project_code,           
+                'project_code':i.project_code,     
+                'create_directly':False,      
                 'line_ids':[(0,0,{
                     'product_id': item.product_id.id,
                     'product_qty': item.product_qty,

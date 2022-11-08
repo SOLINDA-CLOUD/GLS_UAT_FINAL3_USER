@@ -13,6 +13,7 @@ _STATES = [
 class PurchaseRequest(models.Model):
     _inherit = 'purchase.request'
     
+    # qty_is_bigger = fields.Boolean( string='Qty Is Bigger')
     qty_is_bigger = fields.Boolean(compute='_compute_qty_is_bigger', string='Qty Is Bigger')
     project_code = fields.Char('Project Code',store=True)
     

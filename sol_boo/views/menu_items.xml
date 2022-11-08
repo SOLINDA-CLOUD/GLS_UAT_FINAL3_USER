@@ -27,6 +27,8 @@
     <menuitem name="Trouble System Excel Report" action="sol_boo.action_report_reporting_trouble_system" id="trouble_system_report_menu" parent="sol_boo.reporting_boo_menu" sequence="2"/>
     <menuitem name="Chemical &amp; Catridge Report" action="chemical_catridge_report_oms_action" id="input_chemical_catridge_omsreport_menu" parent="sol_boo.root_operation_oms" sequence="3"/>
 
+    <!-- ========================================================= -->
+    <menuitem name="PSAK Report" action="sol_boo.action_psak_report" id="psak_report_menu" parent="account.menu_finance_reports" sequence="1"/>
 
 
   </data>

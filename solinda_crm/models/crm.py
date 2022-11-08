@@ -3,6 +3,19 @@ from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError, UserError
 from dateutil import relativedelta
 
+class CrmLeadLost(models.TransientModel):
+    _inherit = 'crm.lead.lost'
+
+    notes = fields.Text('Notes')
+
+    def action_lost_reason_apply(self):
+        res = super().action_lost_reason_apply()
+        leads = self.env['crm.lead'].browse(self.env.context.get('active_ids'))
+        for l in leads:
+            l.lost_notes = self.notes
+        return res
+
+
 class BusinessType(models.Model):
     _name = 'business.type'
     _description = 'Business Type'
@@ -291,7 +304,9 @@ class CrmLead(models.Model):
 
     change_stage_time = fields.Datetime('Change Stage Time',store=True)
     duration_change_stage = fields.Char(string='Duration')
-    
+    lost_notes = fields.Text('Notes of Lost')
+
+
     @api.onchange('stage_id')
     def _onchange_stagescrm_id(self):
         for i in self:

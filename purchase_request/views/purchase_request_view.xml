@@ -14,7 +14,6 @@
                     <!-- <button name="button_procurement" states="approved" string="Approve" type="object" class="oe_highlight" groups="purchase_request.group_purchase_request_approval3" attrs="{'invisible':['|',('pre_order', '=', True)]}"/> -->
                     <!-- <button name="button_procurement" states="approved" string="Approve" type="object" class="oe_highlight" groups="purchase_request.group_purchase_request_approval4" attrs="{'invisible':['|',('pre_order', '=', False)]}"/> -->
 
-                    <button name="%(action_purchase_request_line_make_purchase_order)d" states="procurement" string="Create RFQ" type="action" groups="purchase_request.group_purchase_request_procurement"/>
                     <button name="button_rejected" states="to_approve,approved,to_approve_gm,procurement" string="Reject" type="object" groups="purchase_request.group_purchase_request_manager" />
                     <field name="state" widget="statusbar" statusbar_visible="draft,to_approve,to_approve_gm,approved,procurement,done" statusbar_colors='{"approved":"blue"}'/>
                     <!-- attrs="{'invisible':['|',('create_directly', '!=', False)]}" -->
@@ -22,11 +21,12 @@
                     <!-- ======== PURCHASE REQUEST STEP 1 USER========== -->
                     <button string="Request approval" name="button_to_approve" states="draft" type="object" class="oe_highlight" groups="purchase_request.group_purchase_request_approval1"/>
                     <!-- ======== PURCHASE REQUEST STEP 2 PM//Atasan========== -->
+                    <button name="button_approved_gm" states="to_approve" string="Approve" type="object" class="oe_highlight" attrs="{'invisible':['|','|',('create_directly', '=', False),('is_atasan', '!=', False)]}" groups="purchase_request.group_purchase_request_approval2" />
                     <button name="button_approved_gm" states="to_approve" string="Approve" type="object" class="oe_highlight" attrs="{'invisible':['|','|',('create_directly', '!=', False),('is_atasan', '!=', False)]}" groups="purchase_request.group_purchase_request_approval2" />
                     <button name="button_approved_gm" states="to_approve" string="Approve" type="object" class="oe_highlight" attrs="{'invisible':['|','|',('is_atasan', '=', False),('create_directly', '=', False)]}" groups="purchase_request.group_purchase_request_approval3" />
                     <!-- ======== PURCHASE REQUEST STEP 3 GM========== -->
-                    <button name="button_procurement" states="to_approve_gm" string="Approve" type="object" class="oe_highlight" attrs="{'invisible':['|','|','|','|',('pre_order', '!=', False),('is_atasan', '=', False),('create_directly', '!=', False),('qty_is_bigger', '!=', False)]}" groups="purchase_request.group_purchase_request_approval4" />
-                    <button name="button_approved" states="to_approve_gm" string="Approve" type="object" class="oe_highlight" attrs="{'invisible':['|','|','|','|',('pre_order', '!=', False),('is_atasan', '=', False),('create_directly', '!=', False),('qty_is_bigger', '=', False)]}" groups="purchase_request.group_purchase_request_approval4" />
+                    <button name="button_procurement" states="to_approve_gm" string="Approve" type="object" class="oe_highlight" attrs="{'invisible':['|','|','|',('pre_order', '!=', False),('create_directly', '!=', False),('qty_is_bigger', '!=', False)]}" groups="purchase_request.group_purchase_request_approval4" />
+                    <button name="button_approved" states="to_approve_gm" string="Approve" type="object" class="oe_highlight" attrs="{'invisible':['|','|','|',('pre_order', '!=', False),('create_directly', '!=', False),('qty_is_bigger', '=', False)]}" groups="purchase_request.group_purchase_request_approval4" />
                     <button name="button_procurement" states="to_approve_gm" string="Approve" type="object" class="oe_highlight" attrs="{'invisible':['|','|',('pre_order', '!=', False),('create_directly', '=', False)]}" groups="purchase_request.group_purchase_request_approval4" />
                     <button name="button_approved" states="to_approve_gm" string="Approve" type="object" class="oe_highlight" attrs="{'invisible':['|',('pre_order', '=', False)]}" groups="purchase_request.group_purchase_request_approval4" />
                     <!-- ======== PURCHASE REQUEST STEP 4 Direksi/Dirut========== -->
@@ -34,6 +34,7 @@
                     <button name="button_procurement" states="approved" string="Approve" type="object" class="oe_highlight" attrs="{'invisible':['|','|',('pre_order', '=', False),('create_directly', '=', False)]}" groups="purchase_request.group_purchase_request_approval6" />
                     <!-- ======== =============================== ========== -->
                     <button name="button_done" states="procurement" string="Done" type="object" class="oe_highlight" groups="purchase_request.group_purchase_request_procurement" />
+                    <button name="%(action_purchase_request_line_make_purchase_order)d" states="procurement" string="Create RFQ" type="action" groups="purchase_request.group_purchase_request_procurement"/>
                 </header>
                 <sheet>
                     <div class="oe_button_box" name="button_box">
@@ -65,7 +66,7 @@
                             <field name="description" attrs="{'readonly': [('is_editable','=', False)]}" />
                             <field name="group_id" attrs="{'readonly': [('is_editable','=', False)]}" />
                             <field name="project_name"/>
-                            <field name="create_directly" readonly="1" force_save="1"/>
+                            <field name="create_directly" readonly="0" force_save="1"/>
                             <field name="pre_order" readonly="0" force_save="1" attrs="{'readonly': [('is_editable','=', False)]}"/>
                         </group>
                         <group>

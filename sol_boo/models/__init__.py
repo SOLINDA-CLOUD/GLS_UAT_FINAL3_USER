@@ -7,3 +7,4 @@ from . import reporting
 from . import trouble_master
 from . import maintenance_request
 from . import stock_picking
+from . import psak_report
