@@ -17,7 +17,18 @@ class SaleOrder(models.Model):
     attn_id = fields.Many2one('res.partner', string='Attn')
     director_info = fields.Char(string='Director')
     
-    
+    def action_print_quotation_boo(self):
+        return self.env.ref('gls_reporting.report_quotation_boo').report_action(self)
+
+    def action_print_quotation_oms(self):
+        return self.env.ref('gls_reporting.report_quotation_oms').report_action(self)
+
+    def action_print_quotation_sale(self):
+        return self.env.ref('gls_reporting.report_sale_order').report_action(self)
+
+    def action_print_quotation_trading(self):
+        return self.env.ref('gls_reporting.report_quotation_trading').report_action(self)
+
     @api.onchange('payment_schedule_line_ids')
     def _onchange_payment_schedule_line_ids(self):
         # total = sum(self.payment_schedule_line_ids.mapped('total_amount'))

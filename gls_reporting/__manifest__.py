@@ -33,7 +33,7 @@
         'report/report_quotation_oms.xml',
         'report/report_sale_order.xml',
         'report/report_quotation_trading.xml',
-        'report/sale.xml',
+        
     ],
     'license': 'LGPL-3'
     
