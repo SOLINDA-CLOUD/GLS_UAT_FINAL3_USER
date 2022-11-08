@@ -21,7 +21,7 @@
         <record id="report_quotation_boo_action" model="ir.actions.report">
             <field name="name">Quotation - BOO</field>
             <field name="model">sale.order</field>
-            <field name="menu">False</field>
+            <field name="menu">0</field>
             <field name="report_type">qweb-pdf</field>
             <field name="report_name">gls_reporting.report_quotation_boo</field>
             <field name="report_file">gls_reporting.report_quotation_boo</field>
@@ -33,7 +33,7 @@
         <record id="report_quotation_oms_action" model="ir.actions.report">
             <field name="name">Quotation - OMS</field>
             <field name="model">sale.order</field>
-            <field name="menu">False</field>
+            <field name="menu">0</field>
             <field name="report_type">qweb-pdf</field>
             <field name="report_name">gls_reporting.report_quotation_oms</field>
             <field name="report_file">gls_reporting.report_quotation_oms</field>
@@ -58,7 +58,7 @@
         <record id="action_report_sale_order" model="ir.actions.report">
             <field name="name">Quotation - Order</field>
             <field name="model">sale.order</field>
-            <field name="menu">False</field>
+            <field name="menu">0</field>
             <field name="report_type">qweb-pdf</field>
             <field name="report_name">gls_reporting.report_sale_order</field>
             <field name="report_file">gls_reporting.report_sale_order</field>
@@ -70,7 +70,7 @@
         <record id="report_quotation_trading_crm_action" model="ir.actions.report">
             <field name="name">Quotation - Trading</field>
             <field name="model">sale.order</field>
-            <field name="menu">False</field>
+            <field name="menu">0</field>
             <field name="report_type">qweb-pdf</field>
             <field name="report_name">gls_reporting.report_quotation_trading</field>
             <field name="report_file">gls_reporting.report_quotation_trading</field>
