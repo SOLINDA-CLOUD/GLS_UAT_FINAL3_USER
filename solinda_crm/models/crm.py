@@ -305,6 +305,7 @@ class CrmLead(models.Model):
     change_stage_time = fields.Datetime('Change Stage Time',store=True)
     duration_change_stage = fields.Char(string='Duration')
     lost_notes = fields.Text('Notes of Lost')
+    is_po_receive = fields.Boolean('Is PO Receive',default=False)
 
 
     @api.onchange('stage_id')

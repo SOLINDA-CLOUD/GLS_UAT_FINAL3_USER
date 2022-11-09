@@ -1,4 +1,6 @@
 from odoo import api, models, fields
+from odoo.exceptions import ValidationError
+
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
@@ -35,3 +37,15 @@ class SaleOrder(models.Model):
     # Responsibilty Centre #
     president_director = fields.Char('President Director')
     director = fields.Char('Director')
+
+    # def action_confirm
+        # self.opportunity_id
+    def action_confirm(self):
+        for i in self:
+            if i.opportunity_id:
+                if not i.opportunity_id.is_po_receive:
+                    raise ValidationError("In CRM there is no activity Contract Signed / PO Received yet.\nPlease make the activity first!")
+        return super(SaleOrder, self).action_confirm()
+
+
+

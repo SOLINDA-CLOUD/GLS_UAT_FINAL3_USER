@@ -68,6 +68,7 @@
 
         <xpath expr="//field[@name='lost_reason']" position="after">
           <field name="lost_notes" attrs="{'invisible': [('active', '=', True)]}"/>
+          <field name="is_po_receive" invisible="1"/>
         </xpath>
 
         <xpath expr="//button[@name=%(crm.action_crm_lead2opportunity_partner)d]" position="attributes">
