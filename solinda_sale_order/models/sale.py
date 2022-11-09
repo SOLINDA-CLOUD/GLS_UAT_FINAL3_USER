@@ -16,6 +16,23 @@ class SaleOrder(models.Model):
     ## Other Info
     attn_id = fields.Many2one('res.partner', string='Attn')
     director_info = fields.Char(string='Director')
+    print_button_visible = fields.Char(compute='_compute_print_button_visible', string='Print BUtton Visible')
+    
+    @api.depends('tag_ids')
+    def _compute_print_button_visible(self):
+        for i in self:
+            if i.tag_ids:
+                name_tag = i.tag_ids.mapped('name')
+                if any('Trading' in w for w in name_tag):
+                    i.print_button_visible = 'trading'
+                elif any('BOO' in w for w in name_tag):
+                    i.print_button_visible = 'boo'
+                elif any('OMS' in w for w in name_tag):
+                    i.print_button_visible = 'oms'
+                else:
+                    i.print_button_visible = False
+            else:
+                i.print_button_visible = False
     
     def action_print_quotation_boo(self):
         return self.env.ref('gls_reporting.report_quotation_boo_action').report_action(self)

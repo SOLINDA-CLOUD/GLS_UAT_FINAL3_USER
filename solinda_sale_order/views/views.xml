@@ -7,10 +7,10 @@
       <field name="inherit_id" ref="sale.view_order_form"/>
       <field name="arch" type="xml">
         <xpath expr="//header" position="inside">
-          <button name="action_print_quotation_boo" states="sale" type="object" string="Print Quotation BOO" class="oe_highlight"/>
-          <button name="action_print_quotation_oms" states="sale" type="object" string="Print Quotation OMS" class="oe_highlight"/>
-          <button name="action_print_quotation_sale" states="sale" type="object" string="Print Quotation Order" class="oe_highlight"/>
-          <button name="action_print_quotation_trading" states="sale" type="object" string="Print Quotation Trading" class="oe_highlight"/>
+          <button name="action_print_quotation_boo" type="object" string="Print Quotation BOO" class="oe_highlight" attrs="{'invisible':[('print_button_visible','!=','boo')]}" />
+          <button name="action_print_quotation_oms" type="object" string="Print Quotation OMS" class="oe_highlight" attrs="{'invisible':[('print_button_visible','!=','oms')]}" />
+          <!-- <button name="action_print_quotation_sale" type="object" string="Print Quotation Order" class="oe_highlight" /> -->
+          <button name="action_print_quotation_trading" type="object" string="Print Quotation Trading" class="oe_highlight" attrs="{'invisible':[('print_button_visible','!=','trading')]}" />
         </xpath>
         <notebook position="inside">
           <page name="payment_schedule" string="Payment Schedule">
@@ -45,10 +45,10 @@
         </notebook>
         <field name="source_id" position="after">
           <field name="attn_id" />
-        </field>
-        <field name="attn_id" position="after">
           <field name="director_info" />
+          <field name="print_button_visible" invisible="1"/>
         </field>
+
         <xpath expr="//field[@name='analytic_account_id']" position="attributes">
           <attribute name="required">1</attribute>
         </xpath>
