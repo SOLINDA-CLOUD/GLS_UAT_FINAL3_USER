@@ -293,8 +293,9 @@
                                     <br />
                                     <span style="text-decoration: underline;">
                                         <strong>
-                                        <span t-field="doc.approved_by_id"/>                                    <br />
+                                        <span t-field="doc.approved_by_id"/>                                   <br />
                                         </strong>
+                                    </span>
                                 </td>
                             </tr>
                         </tbody>
