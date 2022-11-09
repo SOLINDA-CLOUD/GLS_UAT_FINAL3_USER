@@ -15,7 +15,7 @@ class PurchaseRequisition(models.Model):
         ('bidding', 'Bidding')
     ], string='Need Category')
     
-
+    
     @api.model
     def create(self, vals):
         vals['name'] = self.env['ir.sequence'].next_by_code('purchase.requisition.req')
