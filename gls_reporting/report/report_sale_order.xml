@@ -262,7 +262,7 @@
                                     <br/>
                                     <br/>
                                     <br/>
-                                        _________________
+                                    <span t-field="doc.approved_by_id"/>
                                 </td>
                                 <td style="width: 20%;"></td>
                             </tr>
