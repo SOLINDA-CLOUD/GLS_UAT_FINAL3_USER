@@ -405,7 +405,7 @@ class WarantyWaranty(models.Model):
     _description = 'Waranty'
     
     cost_sheet_id = fields.Many2one('cost.sheet', string='Cost Sheet',ondelete="cascade")
-    rap_id = fields.Many2one('cost.sheet', string='Cost Sheet',ondelete="cascade")
+    rap_id = fields.Many2one('rap.rap', string='RAP',ondelete="cascade")
     
     product_id = fields.Many2one('product.product',required=True)    
     product_qty = fields.Integer('Quantity')
