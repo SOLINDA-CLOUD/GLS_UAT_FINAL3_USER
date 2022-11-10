@@ -16,8 +16,10 @@ class SaleOrder(models.Model):
     ## Other Info
     attn_id = fields.Many2one('res.partner', string='Attn')
     director_info = fields.Char(string='Director')
+    director_id = fields.Many2one('res.users', string='Director')
     print_button_visible = fields.Char(compute='_compute_print_button_visible', string='Print BUtton Visible')
-    
+    approved_by_id = fields.Many2one('res.users', string='Approved')
+
     @api.depends('tag_ids')
     def _compute_print_button_visible(self):
         for i in self:

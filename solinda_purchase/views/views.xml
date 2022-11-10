@@ -125,6 +125,9 @@
         <xpath expr="//field[@name='picking_type_id']" position="after">
           <field name="location_id" attrs="{'readonly': [('state', 'not in', ('draft'))]}"/>
         </xpath>
+        <xpath expr="//field[@name='location_id']" position="attributes">
+          <attribute name="required">1</attribute>
+        </xpath>
       </field>
     </record>
 

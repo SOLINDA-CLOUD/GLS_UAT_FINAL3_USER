@@ -292,9 +292,10 @@
                                     <br />
                                     <br />
                                     <span style="text-decoration: underline;">
-                                        <strong>(....................................)                                    <br />
+                                        <strong>
+                                        <span t-field="doc.approved_by_id"/>                                   <br />
                                         </strong>
-                                    </span>......................................
+                                    </span>
                                 </td>
                             </tr>
                         </tbody>
