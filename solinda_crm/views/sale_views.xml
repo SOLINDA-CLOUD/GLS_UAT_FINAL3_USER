@@ -26,12 +26,12 @@
                 </page>
                 <page name="terms_conditions" string="Terms and Conditions">
                     <group name="terms_conditions" string="Terms and Conditions">
-                        <field name="quotation_validity" required="1"/>
-                        <field name="delivery_time" required="1"/>
-                        <field name="delivery_point" required="1"/>
-                        <field name="price_tnc" required="1"/>
-                        <field name="payment_terms" required="1"/>
-                        <field name="revitalization_period" required="1"/>
+                        <field name="quotation_validity" attrs="{'required': [('rab_id','=', False)]}"/>
+                        <field name="delivery_time" attrs="{'required': [('rab_id','=', False)]}"/>
+                        <field name="delivery_point" attrs="{'required': [('rab_id','=', False)]}"/>
+                        <field name="price_tnc" attrs="{'required': [('rab_id','=', False)]}"/>
+                        <field name="payment_terms" attrs="{'required': [('rab_id','=', False)]}"/>
+                        <field name="revitalization_period" attrs="{'required': [('rab_id','=', False)]}"/>
                     </group>
                 </page>
                 <page string="Quotation BOO">
