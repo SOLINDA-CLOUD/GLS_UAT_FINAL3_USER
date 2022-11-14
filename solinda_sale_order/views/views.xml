@@ -49,6 +49,8 @@
           <field name="director_id" />
           <field name="approved_by_id" />
           <field name="print_button_visible" invisible="1"/>
+          <field name="tag_string" invisible="1"/>
+
         </field>
 
         <xpath expr="//field[@name='analytic_account_id']" position="attributes">

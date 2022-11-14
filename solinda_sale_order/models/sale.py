@@ -19,6 +19,16 @@ class SaleOrder(models.Model):
     director_id = fields.Many2one('res.users', string='Director')
     print_button_visible = fields.Char(compute='_compute_print_button_visible', string='Print BUtton Visible')
     approved_by_id = fields.Many2one('res.users', string='Approved')
+    tag_string = fields.Char('Tags')
+
+    @api.onchange('tag_ids')
+    def _onchange_tag_ids(self):
+        for i in self:
+            if i.tag_ids:
+                name_tag = i.tag_ids.mapped('name')
+                name_tag_encap = ['(%s)' % nt for nt in name_tag]
+                end_string = ' '.join(map(str,name_tag_encap))
+                i.tag_string = end_string
 
     @api.depends('tag_ids')
     def _compute_print_button_visible(self):
