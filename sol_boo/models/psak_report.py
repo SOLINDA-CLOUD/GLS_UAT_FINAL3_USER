@@ -17,7 +17,7 @@ class SellingPricePsak(models.Model):
 
 class PsakReport(models.Model):
     _name = 'psak.report'
-    _description = 'PSAK Report'
+    _description = 'PSAK 73 Report'
 
     warehouse_id = fields.Many2one('stock.location', string='Nama BOO',domain=[("usage", "=", "internal")])
     date_from = fields.Date('Start Of Contract')

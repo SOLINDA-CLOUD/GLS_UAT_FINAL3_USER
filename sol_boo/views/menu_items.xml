@@ -28,7 +28,7 @@
     <menuitem name="Chemical &amp; Catridge Report" action="chemical_catridge_report_oms_action" id="input_chemical_catridge_omsreport_menu" parent="sol_boo.root_operation_oms" sequence="3"/>
 
     <!-- ========================================================= -->
-    <menuitem name="PSAK Report" action="sol_boo.action_psak_report" id="psak_report_menu" parent="account.menu_finance_reports" sequence="1"/>
+    <menuitem name="PSAK 73 Report" action="sol_boo.action_psak_report" id="psak_report_menu" parent="account.menu_finance_reports" sequence="1"/>
 
 
   </data>
