@@ -27,7 +27,7 @@
                 <page name="terms_conditions" string="Terms and Conditions">
                     <group name="terms_conditions" string="Terms and Conditions">
                         <field name="quotation_validity" attrs="{'required': [('rab_id','=', False)]}"/>
-                        <field name="delivery_time" attrs="{'required': [('rab_id','=', False)]}"/>
+                        <field name="delivery_time" attrs="{'required': [('rab_id','=', False)]}" />
                         <field name="delivery_point" attrs="{'required': [('rab_id','=', False)]}"/>
                         <field name="price_tnc" attrs="{'required': [('rab_id','=', False)]}"/>
                         <field name="payment_terms" attrs="{'required': [('rab_id','=', False)]}"/>
