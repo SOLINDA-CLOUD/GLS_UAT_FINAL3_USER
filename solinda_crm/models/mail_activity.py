@@ -8,7 +8,7 @@ class MailActivity(models.Model):
     
     def action_close_dialog(self):
         res = super(MailActivity, self).action_close_dialog()
-        case = ['PO Received','Contract Signed','Contract Signed / PO Received']
+        case = ['PO Received','Contract Signed','Contract Signed / PO Received','11. Contract Signed / PO Received','11.Contract Signed / PO Received']
         if any(self.activity_type_id.name in n for n in case) and self.res_model == 'crm.lead':
             crm_id = self.env["crm.lead"].search([("id", "=",self.res_id)])
             crm_id.is_po_receive = True
