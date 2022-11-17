@@ -2,6 +2,13 @@ from datetime import datetime
 from odoo import _, api, fields, models
 from dateutil import relativedelta
 
+# class SparePartList(models.Model):
+#     _name = 'spare.part.list'
+#     _description = 'Spare Part List'
+    
+#     name = fields.Char('Name')
+#     equipment_id = fields.Many2one('maintenance.equipment', string='Equipment')
+
 class HistoryEquipmentUsage(models.Model):
     _name = 'history.equipment.usage'
     _description = 'History Equipment Usage'
@@ -15,7 +22,9 @@ class HistoryEquipmentUsage(models.Model):
 class MaintenanceEquipment(models.Model):
     _inherit = 'maintenance.equipment'
 
-    location_id = fields.Many2one('stock.location', string='Location')    
+    location_id = fields.Many2one('stock.location', string='Location')   
+    part_no = fields.Char('Part No') 
+    # spare_part_ids = fields.One2many('spare.part.list', 'equipment_id', string='Spare Part')
 
 class ActionPlanMaintenance(models.Model):
     _name = 'action.plan.maintenance'

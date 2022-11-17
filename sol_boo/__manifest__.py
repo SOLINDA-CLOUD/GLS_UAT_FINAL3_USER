@@ -30,6 +30,7 @@
         'data/data.xml',
         'views/reporting_view.xml',
         'views/psak_report_view.xml',
+        'views/maintenance_equipment.xml',
         'views/pivot_graph.xml',
         'views/stock_location.xml',
         'views/trouble_master.xml',
