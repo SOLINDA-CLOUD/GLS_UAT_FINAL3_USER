@@ -306,6 +306,7 @@ class CrmLead(models.Model):
     duration_change_stage = fields.Char(string='Duration')
     lost_notes = fields.Text('Notes of Lost')
     is_po_receive = fields.Boolean('Is PO Receive',default=False)
+    additional_prob = fields.Float('Additional Probability',store=True)
 
 
     @api.onchange('stage_id')
